@@ -2,9 +2,19 @@ pipeline {
     agent any
 
     stages {
-        stage("Say Hello") {
+        stage("Build") {
             steps {
-                echo("Hello Jenkins Using Pipeline")
+                echo("Hello Jenkins this is Build stages")
+            }
+        }
+        stage("Test") {
+            steps {
+                echo("Hello Jenkins this is Test stages")
+            }
+        }
+        stage("Deploy") {
+            steps {
+                echo("Hello Jenkins this is Deploy stages")
             }
         }
     }
@@ -15,7 +25,7 @@ pipeline {
         }
 
         success {
-            echp("Yay, success")
+            echo("Yay, success")
         }
 
         failue {
