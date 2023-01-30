@@ -4,12 +4,16 @@ pipeline {
     stages {
         stage("Build") {
             steps {
-                echo("Hello Jenkins this is Build stages")
+                echo("Start Build")
+                sh("./mvnw clean compile test-compile")
+                echo("Finish Build")
             }
         }
         stage("Test") {
             steps {
-                echo("Hello Jenkins this is Test stages")
+                echo("Start Test")
+                sh("./mvnw test")
+                echo("Finish Test")
             }
         }
         stage("Deploy") {
