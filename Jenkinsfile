@@ -28,7 +28,7 @@ pipeline {
             echo("Yay, success")
         }
 
-        failue {
+        failure {
             echo("Oh no, it is failure")
         }
 
