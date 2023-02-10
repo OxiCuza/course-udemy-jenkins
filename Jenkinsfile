@@ -6,6 +6,11 @@ pipeline {
         WEB = "oxicuza@github.io"
     }
 
+    options {
+        disableConcurentBuilds()
+        timeout(time: 10, unit: 'MINUTES')
+    }
+
     stages {
         stage("Prepare") {
             steps {
