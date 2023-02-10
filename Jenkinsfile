@@ -6,6 +6,10 @@ pipeline {
         WEB = "oxicuza@github.io"
     }
 
+    triggers {
+        cron("*/5 * * * *")
+    }
+
     parameters {
         string(name: "NAME", defaultValue: "Guest", description: "What is your name?")
         text(name: "DESCRIPTION", defaultValue: "Hehehe", description: "Tell me about you")
