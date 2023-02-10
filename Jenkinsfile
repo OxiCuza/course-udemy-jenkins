@@ -6,6 +6,14 @@ pipeline {
         WEB = "oxicuza@github.io"
     }
 
+    parameters {
+        string(name: "NAME", defaultValue: "Guest", description: "What is your name?")
+        text(name: "DESCRIPTION", defaultValue: "Hehehe", description: "Tell me about you")
+        booleanParam(name: "DEPLOY", defaultValue: false, description: "Need to deploy?")
+        choice(name: "SOCIAL_MEDIA", choices: ['Instagram', 'Facebook'], description: "Which one?")
+        password(name: "SECRET", defaultValue: "")
+    }
+
     options {
         disableConcurentBuilds()
         timeout(time: 10, unit: 'MINUTES')
